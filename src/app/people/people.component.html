@@ -1,0 +1,22 @@
+<p-splitter
+    [panelSizes]="[20,80]"
+    styleClass="p-mb-5"
+>
+    <ng-template pTemplate>
+        <div class="card-container">
+            <p-card *ngFor="let person of people$ | async">
+                <button
+                    pButton
+                    pRipple
+                    type="link"
+                    class="p-button-text"
+                    [routerLink]="['detail', person.name]"
+                    [label]="person.name">
+                </button>
+            </p-card>
+        </div>
+    </ng-template>
+    <ng-template pTemplate>
+        <router-outlet></router-outlet>
+    </ng-template>
+</p-splitter>
